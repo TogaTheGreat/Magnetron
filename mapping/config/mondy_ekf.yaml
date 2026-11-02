@@ -1,0 +1,44 @@
+ekf_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.5
+    two_d_mode: true
+    print_diagnostics: true
+
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_footprint
+    world_frame: odom
+
+    # This standalone EKF publishes TF when launched; the mapping launch does not start it.
+    publish_tf: true
+
+    # -------------------------
+    odom0: /wheel/odom
+    odom0_config: [
+      false,  false,  false,   # x, y, z position
+      false, false, false,   # roll, pitch, yaw orientation
+      true, true,  false,   # vx, vy, vz linear velocity
+      false, false, true,   # vroll, vpitch, vyaw angular velocity
+      false, false, false    # ax, ay, az acceleration
+    ]
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 20
+
+    # -------------------------
+    # OAK IMU input: trust angles + angular velocity
+    # -------------------------
+    #imu0: /oak/imu/data
+    #imu0_config: [
+    #  false, false, false,   # x, y, z position
+    #  true,  true,  true,    # roll, pitch, yaw orientation
+    #  false, false, false,   # vx, vy, vz linear velocity
+    #  true,  true,  true,    # vroll, vpitch, vyaw angular velocity
+    #  #false, false, false,
+    #  true, true, true    # ax, ay, az acceleration
+    #]
+    #imu0_differential: false
+    #imu0_relative: true
+    #imu0_queue_size: 100
+    #imu0_remove_gravitational_acceleration: true

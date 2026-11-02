@@ -1,0 +1,30 @@
+List of commands for Mon-D
+
+Production (Finalish)
+ On Rover: systemd service osr_startup
+ (systemctl start/stop osr_startup)
+
+On Rover:
+ (in ~/Mon-D): bash rtab_test.sh
+ For display: ros2 launch mondy_description display.launch.py
+
+On Magnetron:
+ (in ~/server): ros2 launch RTAB_map_start.py
+
+ To be added to launch files:
+  ros2 run tf2_ros static_transform_publisher   0.10 0.00 0.20   -1.5708 0 -1.5708   base_link oak_rgb_camera_optical_frame
+  ros2 run tf2_ros static_transform_publisher   0.10 0.00 0.20 0 1.5708 0   base_link oak_imu_frame
+  ros2 run robot_localization ekf_node --ros-args --params-file ~/server/mond_ekf.yaml
+
+
+Update as of 9/12:
+
+Magnetron:
+ros2 launch ~/server/RTAB_map_start.py
+ros2 launch mondy_description display.launch.py
+rviz2
+
+Rover:
+bash ~/Mon-D/mondy.sh
+
+Result: Pretty ok RTAB-map

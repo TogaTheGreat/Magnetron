@@ -1,0 +1,32 @@
+# ROS / colcon output
+build/
+install/
+log/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+Venv/
+# Local data and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.db
+*.db-*
+*.db3
+*.mcap
+*.bag
+*.log
+*.old
+*.save
+*~
+.vscode/
+.idea/
+.DS_Store
+
+# Local preparation notes (not project source)
+/PREPARATION.md
+/PREPERATION.md
