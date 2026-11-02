@@ -1,3 +1,6 @@
+# Magnetron
+The companion server to Mon-D, which handles the Autonomy and Navigation compute Mon-D can't.
+
 # Mon-D mapping server
 
 Server-side RTAB-Map launch and localization configuration, with the Mon-D model, camera mount, RoArm M3 visualization and joint-state helpers. Mon-D is the separate robot; its hardware code is already maintained in another [GitHub repository.](https://github.com/TogaTheGreat/Mon-D)
